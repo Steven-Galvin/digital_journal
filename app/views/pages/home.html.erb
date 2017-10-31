@@ -1,0 +1,28 @@
+<h1>Home</h1>
+<%= link_to 'New Post', new_post_path %>
+<%= link_to 'Edit Posts', posts_path %>
+
+<hr>
+
+<% @posts.each do |post| %>
+  <h2><%= post.title %></h2>
+  <%= post.body %>
+  <% if post.picture_one.exists? %>
+    <br> <%= image_tag(post.picture_one) %>
+  <% end %>
+
+  <% if post.picture_two.exists? %>
+    <%= image_tag(post.picture_two) %> <br>
+  <% end %>
+
+  <% if post.picture_three.exists? %>
+    <%= image_tag(post.picture_three) %>
+  <% end %>
+
+  <% if post.picture_four.exists? %>
+    <%= image_tag(post.picture_four) %>
+  <% end %>
+  <br>
+  <%= link_to 'Edit', edit_post_path(post) %>
+  <hr>
+<% end %>

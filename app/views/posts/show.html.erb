@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<h2><%= @post.title %></h2>
+<%= @post.body %> <br>
+<% if @post.picture_one.exists? %>
+  <%= image_tag(@post.picture_one) %>
+<% end %>
+
+<% if @post.picture_two.exists? %>
+  <%= image_tag(@post.picture_two) %>
+<% end %> <br>
+
+<% if @post.picture_three.exists? %>
+  <%= image_tag(@post.picture_three) %>
+<% end %>
+
+<% if @post.picture_four.exists? %>
+  <%= image_tag(@post.picture_four) %>
+<% end %>
+<hr>
+<%= link_to 'Edit', edit_post_path(@post) %> |
+<%= link_to 'Back', posts_path %>
